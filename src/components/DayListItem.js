@@ -28,6 +28,6 @@ const DayListItem = (props) => {
       <h3>{formatSpots(props)}</h3>
     </li>
   );
-}
+};
 
 export default DayListItem;

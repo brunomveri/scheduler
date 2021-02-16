@@ -21,6 +21,6 @@ const DayList = (props) => {
       {mappedDays}
     </ul>
   );
-}
+};
 
 export default DayList;
