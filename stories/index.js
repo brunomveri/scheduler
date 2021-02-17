@@ -145,7 +145,7 @@ storiesOf("Button", module)
           .add("Empty", () => <Empty onAdd={action("onAdd")} />)
           .add("Show", () => (
             <Show
-              onEdit={action("onEdit")}
-              // onDelete={action("onDelete")} //check with a mentor
+              onEdit={action("onEdit")} //check with a mentor
+              onDelete={action("onDelete")} //check with a mentor
             />
           ));
