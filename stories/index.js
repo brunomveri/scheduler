@@ -7,6 +7,8 @@ import DayListItem from "components/DayListItem";
 import DayList from "components/DayList";
 import InterviewerListItem from "components/InterviewerListItem";
 import InterviewerList from "components/InterviewerList";
+import Appointment from "components/Appointment";
+import Header from "components/Appointment";
 
 storiesOf("Button", module)
   .addParameters({
@@ -92,14 +94,6 @@ storiesOf("Button", module)
           selected
         />
       ))
-      // .add("Clickable", () => (
-      //   <InterviewerListItem
-      //     id={interviewer.id}
-      //     name={interviewer.name}
-      //     avatar={interviewer.avatar}
-      //     setInterviewer={action("setInterviewer")}
-      //   />
-      // ))
       .add("Clickable", () => (
         <InterviewerListItem
           id={interviewer.id}
@@ -136,3 +130,14 @@ storiesOf("Button", module)
             setInterviewer={action("setInterviewer")}
           />
         ));
+
+        //Stories for Appointment
+
+        storiesOf("Appointment", module)
+          .addParameters({
+            backgrounds: [{ name: "white", value: "#fff", default: true }]
+          })
+          .add("Appointment", () => <Appointment />)
+          .add("Appointment with Time", () => <Appointment time="12pm" />)
+          .add("Header", () => <Header time="12pm" />)
+          .add("Empty", () => <Empty onAdd={action("onAdd")} />);
