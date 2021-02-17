@@ -11,6 +11,7 @@ import Appointment from "components/Appointment";
 import Header from "components/Appointment";
 import Empty from "components/Appointment";
 import Show from "components/Appointment";
+import Confirm from "components/Appointment"
 
 storiesOf("Button", module)
   .addParameters({
@@ -145,7 +146,17 @@ storiesOf("Button", module)
           .add("Empty", () => <Empty onAdd={action("onAdd")} />)
           .add("Show", () => (
             <Show
+              student={"Lydia Miller-Jones"} //check with a mentor
+              interviewer={3} //check with a mentor
               onEdit={action("onEdit")} //check with a mentor
               onDelete={action("onDelete")} //check with a mentor
             />
-          ));
+          ))
+          .add("Confirm", () => (
+            <Confirm
+              message={"Delete the appointment?"}
+              onConfirm={action("onConfirm")} //Should I split this story into 2? one for onConfirm and other for onDElete?
+              onCancel={action("onCancel")}
+            />
+          ))
+          .add("Status", () => <Status message={"Deleting"} />; //check with mentor
