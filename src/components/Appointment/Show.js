@@ -18,13 +18,13 @@ const Show = (props) => {
         className="appointment__actions-button"
         src="images/edit.png"
         alt="Edit"
-        onEdit={props.onEdit()} //check with a mentor
+        onEdit={props.onEdit} //check with a mentor
       />
       <img
         className="appointment__actions-button"
         src="images/trash.png"
         alt="Delete"
-        onDelete={props.onDelete()} //check with a mentor
+        onDelete={props.onDelete} //check with a mentor
       />
     </section>
   </section>
