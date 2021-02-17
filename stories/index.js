@@ -145,6 +145,6 @@ storiesOf("Button", module)
           .add("Show", () => (
             <Show
             onEdit={action("onEdit")}
-            onDelete={action("onDelete")} //check with a mentor
+            // onDelete={action("onDelete")} //check with a mentor
             />
           ));
