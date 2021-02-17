@@ -159,4 +159,4 @@ storiesOf("Button", module)
               onCancel={action("onCancel")}
             />
           ))
-          .add("Status", () => <Status message={"Deleting"} />; //check with mentor
+          .add("Status", () => <Status message={"Deleting"} />); //check with mentor
