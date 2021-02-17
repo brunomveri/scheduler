@@ -6,7 +6,7 @@ const DayListItem = (props) => {
 
   const dayClass = classNames("day-list__item", {
     "day-list__item--selected": props.selected,
-    "day-list__item--full": !(props.spots)
+    "day-list__item--full": props.spots === 0
   });
 
   function formatSpots(props) {
