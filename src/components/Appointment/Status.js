@@ -1,7 +1,7 @@
 import React from "react";
 
-const Status = (props) => {
 
+const Status = (props) => {
 
   return (
     <main className="appointment__card appointment__card--status">
