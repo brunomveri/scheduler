@@ -9,7 +9,8 @@ import InterviewerListItem from "components/InterviewerListItem";
 import InterviewerList from "components/InterviewerList";
 import Appointment from "components/Appointment";
 import Header from "components/Appointment";
-import Show from "components/Appointment"
+import Empty from "components/Appointment";
+import Show from "components/Appointment";
 
 storiesOf("Button", module)
   .addParameters({
@@ -144,7 +145,7 @@ storiesOf("Button", module)
           .add("Empty", () => <Empty onAdd={action("onAdd")} />)
           .add("Show", () => (
             <Show
-            onEdit={action("onEdit")}
-            // onDelete={action("onDelete")} //check with a mentor
+              onEdit={action("onEdit")}
+              // onDelete={action("onDelete")} //check with a mentor
             />
           ));
