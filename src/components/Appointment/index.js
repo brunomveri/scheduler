@@ -4,7 +4,10 @@ import "components/Appointment/styles.scss"
 const Appointment = (props) => {
   
   return (
-    <article className="appointment"></article>
+    <article className="appointment">
+
+      
+    </article>
   );
 };
 
