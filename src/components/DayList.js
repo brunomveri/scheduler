@@ -16,6 +16,7 @@ const DayList = (props) => {
         />
       );
   });
+  
   return (
     <ul> 
       {mappedDays}
