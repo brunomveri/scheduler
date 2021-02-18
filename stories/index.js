@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import "index.scss";
@@ -14,6 +14,7 @@ import Show from "components/Appointment/Show";
 import Confirm from "components/Appointment/Confirm";
 import Error from "components/Appointment/Error";
 import Status from "components/Appointment/Status";
+import Form from "components/Appointment/Form";
 
 storiesOf("Button", module)
   .addParameters({
@@ -148,16 +149,16 @@ storiesOf("Appointment", module)
   .add("Empty", () => <Empty onAdd={action("onAdd")} />)
   .add("Show", () => (
     <Show
-      student={"Lydia Miller-Jones"} //check with a mentor
-      interviewer={3} //check with a mentor
-      onEdit={action("onEdit")} //check with a mentor
-      onDelete={action("onDelete")} //check with a mentor
+      student={"Lydia Miller-Jones"} 
+      interviewer={3} 
+      onEdit={action("onEdit")} 
+      onDelete={action("onDelete")} 
     />
   ))
   .add("Confirm", () => (
     <Confirm
       message={"Delete the appointment?"}
-      onConfirm={action("onConfirm")} //Should I split this story into 2? one for onConfirm and other for onDElete?
+      onConfirm={action("onConfirm")} 
       onCancel={action("onCancel")}
     />
   ))
@@ -168,3 +169,42 @@ storiesOf("Appointment", module)
       onClose={action("onClose")}
     />
   ));
+
+
+  //Stories for Form component
+  storiesOf("Form", module)
+    .addParameters({
+      backgrounds: [{ name: "white", value: "#fff", default: true }], //are those the correct key-values?
+    })
+    .add("Edit", () => (
+      <Form
+        name={"Cohana Roy"}
+        interviewers={interviewers}
+        interviewer={4}
+        onSave={action("onSave")} 
+        onCancel={action("onCancel")}
+      />
+    ))
+    .add("Create", () => (
+      <Form
+        interviewers={interviewers}
+        onSave={action("onSave")}
+        onCancel={action("onCancel")}
+      />
+    ))
+    .add("Appointment Empty", () => (
+      <Fragment>
+        <Appointment id={1} time="12pm" />
+        <Appointment id="last" time="1pm" />
+      </Fragment>
+    ))
+    .add("Appointment Booked", () => (
+      <Fragment>
+        <Appointment
+          id={1}
+          time="12pm"
+          interview={{ student: "Lydia Miller-Jones", interviewer:"Sylvia Palmer" }}
+        />
+        <Appointment id="last" time="1pm" />
+      </Fragment>
+    ));
