@@ -4,12 +4,12 @@ import InterviewerListItem from "components/InterviewerListItem";
 
 
 const InterviewerList = (props) => {
+  console.log(props);
    
   const mappedInterviewer = props.interviewers.map(interviewer => {
     return(
      <InterviewerListItem 
        key={interviewer.id}
-      //  id={interviewer.id} //do I need this?
        avatar={interviewer.avatar}
        name={interviewer.name} 
        selected={interviewer.id === props.interviewer}
