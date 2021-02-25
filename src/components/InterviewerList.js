@@ -16,7 +16,6 @@ const InterviewerList = (props) => {
      />
     );
   })
-  
   //Typec Cheking with Props Tyes:
   InterviewerList.propTypes = {
     interviewers: PropTypes.array.isRequired
