@@ -30,7 +30,7 @@ function Appointment (props) {
     if (!interviewer) {
       alert("Please select the interviewer");
     } else {
-      
+
       const interview = {
         student: name,
         interviewer,
@@ -39,18 +39,18 @@ function Appointment (props) {
       transition(SAVING)
       props
         .bookInterview(props.id, interview)
-        .then(() => transition(SHOW, true))
-        .catch(() => transition(ERROR_SAVE, true)); //<-----
+        .then(() => transition(SHOW))
+        .catch(() => transition(ERROR_SAVE, true));
     }
 
   };
   
-  function deleteAppointment(event) {
+  function deleteAppointment() {
     transition(DELETING, true);
     props
       .cancelInterview(props.id)
-      .then(() => transition(EMPTY, true))
-      .catch(() => transition(ERROR_DELETE, true)); //<-----
+      .then(() => transition(EMPTY))
+      .catch(() => transition(ERROR_DELETE, true));
   }
 
   return (
@@ -90,8 +90,8 @@ function Appointment (props) {
             onSave={save} 
             onCancel={() => back(SHOW)}
           />}
-        {mode === ERROR_SAVE && <Error message="ERROR SAVING" onCancel={() => transition(SHOW)} />}
-        {mode === ERROR_DELETE && <Error message="ERROR DELETING" onCancel={() => transition(SHOW)} />}
+        {mode === ERROR_SAVE && <Error message="ERROR SAVING" onCancel={back} />}
+        {mode === ERROR_DELETE && <Error message="ERROR DELETING" onCancel={back} />}
     </article>
   );
 }
