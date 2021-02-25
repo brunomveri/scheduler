@@ -25,7 +25,6 @@ export default function Application(props) {
       <Appointment
         key={appointment.id}
         id={appointment.id}
-        // {...appointment}
         time={appointment.time}
         interview={interview} 
         interviewers={interviewers}
@@ -45,7 +44,6 @@ export default function Application(props) {
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
-          {/* This is our DayList on the side */}
           <DayList
             days={state.days}
             day={state.day}
