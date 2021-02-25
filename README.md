@@ -1,14 +1,15 @@
 # Interview Scheduler
 
+
 With this application, a student can create, edit and delete interview appointments. Appointments can made between noon to 5pm for each day of the week.
 
+Interview Scheduler was made for educational purposes to learn React.
 
-## Final Product
+## Screenshots
 
-!["Screenshot of Edit page"](https://github.com/brunomveri/tinyapp/blob/master/docs/edit-url-page.png)
-!["Screenshot of a User's page"](https://github.com/brunomveri/tinyapp/blob/master/docs/logged-user-page.png)
-!["Screenshot of Register page"](https://github.com/brunomveri/tinyapp/blob/master/docs/register-page.png)
-!["Screenshot of URLs page"](https://github.com/brunomveri/tinyapp/blob/master/docs/urls-page.png)
+!["Appointment form empty"](https://github.com/brunomveri/scheduler/blob/master/docs/appointment-form-1empty.png?raw=true)
+!["Appointment form filled up"](https://github.com/brunomveri/scheduler/blob/master/docs/appointment-form-2filledup.png?raw=true)
+!["Appointment form saved"](https://github.com/brunomveri/scheduler/blob/master/docs/appointment-form-3saved.png?raw=true)
 
 ## Setup
 
