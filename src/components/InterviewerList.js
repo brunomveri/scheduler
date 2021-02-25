@@ -1,10 +1,9 @@
 import React from "react";
 import "components/InterviewerList.scss"
 import InterviewerListItem from "components/InterviewerListItem";
-
+import PropTypes from 'prop-types';
 
 const InterviewerList = (props) => {
-  console.log(props);
    
   const mappedInterviewer = props.interviewers.map(interviewer => {
     return(
@@ -12,13 +11,18 @@ const InterviewerList = (props) => {
        key={interviewer.id}
        avatar={interviewer.avatar}
        name={interviewer.name} 
-       selected={interviewer.id === props.interviewer}
-       setInterviewer={() => props.setInterviewer(interviewer.id)}
+       selected={interviewer.id === props.value} 
+       setInterviewer={event => props.onChange(interviewer.id)}
      />
     );
   })
-    
-  return(
+  
+  //Typec Cheking with Props Tyes:
+  InterviewerList.propTypes = {
+    interviewers: PropTypes.array.isRequired
+  };
+
+  return (
     <section className="interviewers">
       <h4 className="interviewers__header text--light">Interviewer</h4>
       <ul className="interviewers__list">
