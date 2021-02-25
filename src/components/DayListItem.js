@@ -23,11 +23,13 @@ const DayListItem = (props) => {
     <li 
       className={dayClass} 
       onClick={() => props.setDay(props.name)}
+      data-testid="day"
     >
       <h2>{props.name}</h2>
       <h3>{formatSpots(props)}</h3>
     </li>
   );
+  
 };
 
 export default DayListItem;
