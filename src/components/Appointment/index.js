@@ -9,6 +9,7 @@ import Confirm from "./Confirm";
 import Error from "./Error";
 import useVisualMode from "../../../src/hooks/useVisualMode";
 
+//Modes varibales:
 const CREATE = "CREATE";
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
@@ -80,12 +81,12 @@ function Appointment (props) {
             onSave={save}
             onDelete={deleteAppointment}
           />}
-        {mode === EDIT && // EDIT form 
+        {mode === EDIT &&
           <Form 
             interviewers={props.interviewers} 
             onDelete={deleteAppointment} 
-            name={props.interview.student} // student name placeholder
-            interviewer={props.interview.interviewer.id} // interviewer placeholder
+            name={props.interview.student}
+            interviewer={props.interview.interviewer.id}
             onSave={save} 
             onCancel={() => back(SHOW)}
           />}
